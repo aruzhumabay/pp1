@@ -1,20 +1,15 @@
 #include <iostream>
+#include <map>
+#include <sstream>
 using namespace std;
 int main(){
-    int n,evencount=0,oddcount=0;
-    cin>>n;
-    int arr[n];
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
-        if(arr[i]%2==0)
-            evencount++;
-        else
-            oddcount++;
-
-            
-        }
-        cout<<"Even: "<<evencount<<endl;
-        cout<<"Odd: "<<oddcount<<endl;
-        return 0;
+    string text = "this is a test this only a test";
+    map<string,int>freq;
+    string word;
+    stringstream ss(text);
+    while(ss>>word)
+        freq[word]++;
+    for(auto pair : freq)
+        cout<<pair.first<<"->"<<pair.second<<endl;
 
 }

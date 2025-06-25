@@ -1,24 +1,18 @@
 #include <iostream>
+#include <queue>
 using namespace std;
 int main(){
-    int n;
-    cin>>n;
-    int arr[n];
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
+    queue<string> q;
+    string name;
+    cout<<"Enter 5 names:\n";
+    for(int i=0;i<5;i++){
+        cin>>name;
+        q.push(name);
     }
-    int target;
-    cin>>target;
-    bool found=false;
-    for(int i=0;i<n;i++){
-        if(arr[i]==target){
-            cout<<"Found at index "<<i<<endl;
-            found=true;
-            break;
-        }
+    while(!q.empty()){
+        cout<<"Now serving: "<<q.front()<<endl;
+        q.pop();
     }
-    if(!found){
-        cout<<"Not Found"<<endl;
-    }
+    cout<<"Queue is empty.\n";
     return 0;
 }

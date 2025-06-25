@@ -1,22 +1,26 @@
 #include <iostream>
+#include <set>
 using namespace std;
 int main(){
-    int n;
-    cin>>n;
-    int arr[n];
-    cin>>arr[0];
-    int max_value=arr[0];
-    int min_value=arr[0];
-    for(int i=1;i<n;i++){
-        cin>>arr[i];
-        if(arr[i]>max_value){
-            max_value=arr[i];
-        }
-        if(arr[i]<min_value){
-            min_value=arr[i];
-        }
+    set <int> s;
+    int x;
+    for(int i=0;i<10;i++){
+        cin>>x;
+        s.insert(x);
     }
-    cout<<"Max= "<<max_value<<endl;
-    cout<<"Min= "<<min_value<<endl;
+    cout<<"Enter number to search: ";
+    cin>>x;
+    if(s.find(x) !=s.end()){
+        cout<<"Found\n";
+    }
+    else{
+        cout<<"Not found\n";
+    }
+    
+    cout<<"Set elements: ";
+    for(int n : s){
+        cout<<n<<" ";
+    }
+
     return 0;
 }
