@@ -1,18 +1,27 @@
 #include <iostream>
-#include <queue>
+#include <deque>
+#include <algorithm>
 using namespace std;
 int main(){
-    queue<string> q;
-    string name;
-    cout<<"Enter 5 names:\n";
-    for(int i=0;i<5;i++){
-        cin>>name;
-        q.push(name);
+    deque<int> num;
+    for(int i=0;i<3;i++){
+        int d;
+        cin>>d;
+        num.push_back(d);
     }
-    while(!q.empty()){
-        cout<<"Now serving: "<<q.front()<<endl;
-        q.pop();
+    sort(num.begin(),num.end());
+    for(int rev_num : num ){
+        cout << rev_num<<" ";
     }
-    cout<<"Queue is empty.\n";
-    return 0;
+    cout<< endl;
+    cout<<"Pop back: "<< num.back()<< endl;
+    num.pop_back();
+    cout<<"Pop front: "<< num.front()<< endl;
+    num.pop_front();
+    cout<< "Remaining: ";
+    for(int x: num){
+        cout<< x<<" ";
+
+    }
+    cout << endl;
 }

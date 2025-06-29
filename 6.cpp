@@ -1,13 +1,28 @@
 #include <iostream>
-#include <vector>
-#include <numeric>
-using namespace std;
-double average(const vector<int>& v){
-    if(v.empty()) return 0;
-    int sum = accumulate(v.begin(),v.end(),0);
-    return(double)sum/v.size();
-}
-int main(){
-    vector<int> v={10,20,30,40,50};
-    cout<<"Average: "<<average(v)<<endl;
-}
+   #include <deque>
+   #include <string>
+   using namespace std; 
+   int main(){
+    string m;
+    cin>>m;
+    deque<char> dan;
+    for(char x: m){
+        dan.push_back(x);
+    }
+    bool ispalindrom = true;
+    while(dan.size()>1){
+        if(dan.front() != dan.back()){
+            ispalindrom = false;
+            break;
+        }
+        dan.pop_front();
+        dan.pop_back();
+    }
+    if(ispalindrom){
+        cout<<"It is a palindrome. ";
+    }
+    else{
+        cout<<"no";
+    }
+    return 0;
+   }

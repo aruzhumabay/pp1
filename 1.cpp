@@ -1,26 +1,19 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <stack>
 using namespace std;
 int main() {
-    vector<int> nums;
-    int n, x;
-    cout << "Enter how many numbers you want to input: ";
-    cin >> n;
-    cout << "Enter " << n << " numbers:\n";
-    for (int i = 0; i < n; ++i) {
-        cin >> x;
-        nums.push_back(x);
+    stack<int> s;
+    int num;
+    cout << "Enter 5 numbers: ";
+    for (int i = 0; i < 5; ++i) {
+        cin >> num;
+        s.push(num);
     }
-    sort(nums.begin(), nums.end());
-
-    cout << "Sorted vector: ";
-    for (int val : nums) cout << val << " ";
+    cout << "Stack (Top to Bottom): ";
+    while (!s.empty()) {
+        cout << s.top() << " ";
+        s.pop();
+    }
     cout << endl;
-    cout << "Min: " << nums.front() << endl;
-    cout << "Max: " << nums.back() << endl;
-    nums.erase(unique(nums.begin(), nums.end()), nums.end());
-
-    cout << "Without duplicates: ";
-    for (int val : nums) cout << val << " ";
+    return 0;
 }

@@ -1,15 +1,17 @@
 #include <iostream>
-#include <map>
-#include <sstream>
+#include <queue>
 using namespace std;
 int main(){
-    string text = "this is a test this only a test";
-    map<string,int>freq;
-    string word;
-    stringstream ss(text);
-    while(ss>>word)
-        freq[word]++;
-    for(auto pair : freq)
-        cout<<pair.first<<"->"<<pair.second<<endl;
-
+    queue<int>num;
+    for(int i=0;i<5;i++){
+        int d;
+        cin>>d;
+        num.push(d);
+    }
+    cout<<"Dequeued: ";
+    while(!num.empty()){
+        cout<<num.front()<<" ";
+        num.pop();
+    }
+    return 0;
 }

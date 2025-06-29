@@ -1,25 +1,17 @@
 #include <iostream>
-#include <stack>
+#include <queue>
 #include <string>
 using namespace std;
-bool isBalanced(string expr){
-    stack<char>st;
-    for(char c: expr){
-        if(c=='(') st.push(c);
-        else if(c==')'){
-            if(st.empty()) return false;
-            st.pop();
-        }
-    }
-    return st.empty();
-}
 int main(){
-    string s;
-    cout<<"Enter expression: ";
-    cin>>s;
-    if (isBalanced(s))
-        cout<<"Correct";
-    else
-        cout<<"Incorrect";
-    return 0; 
+    queue<string> names;
+    for(int i=0;i<3; i++){
+        string name;
+        cin>> name;
+        names.push(name);
+    }
+    while(!names.empty()){
+        cout<<" Serving: " << names.front()<< endl;
+        names.pop();
+    }
+    return 0;
 }
