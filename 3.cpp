@@ -1,17 +1,12 @@
 #include <iostream>
-#include <queue>
 using namespace std;
-int main(){
-    queue<int>num;
-    for(int i=0;i<5;i++){
-        int d;
-        cin>>d;
-        num.push(d);
-    }
-    cout<<"Dequeued: ";
-    while(!num.empty()){
-        cout<<num.front()<<" ";
-        num.pop();
-    }
+string reverseString(string s) {
+    if (s.length() <= 1)
+        return s;
+    return reverseString(s.substr(1)) + s[0];
+}
+int main() {
+    string input = "hello";
+    cout << "Output: " << reverseString(input) << endl;
     return 0;
 }

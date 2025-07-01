@@ -1,18 +1,13 @@
 #include <iostream>
-#include <stack>
-#include <string>
 using namespace std;
-int main(){
-    string word;
-    cin>> word;
-    stack<char> letters;
-    for(char d : word ){
-        letters.push(d);
-    }
-    while(!letters.empty()){
-        cout<<letters.top();
-        letters.pop();
-
-    }
-      return 0;
+int fibonacci(int n) {
+    if (n <= 1)
+        return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+int main() {
+    int n;
+    cin>>n;
+    cout << "Output: " << fibonacci(n) << endl;
+    return 0;
 }

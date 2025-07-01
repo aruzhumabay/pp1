@@ -1,19 +1,14 @@
 #include <iostream>
-#include <stack>
 using namespace std;
+int factorial(int n) {
+    if (n <= 1)
+        return 1;
+    return n * factorial(n - 1);
+}
 int main() {
-    stack<int> s;
-    int num;
-    cout << "Enter 5 numbers: ";
-    for (int i = 0; i < 5; ++i) {
-        cin >> num;
-        s.push(num);
-    }
-    cout << "Stack (Top to Bottom): ";
-    while (!s.empty()) {
-        cout << s.top() << " ";
-        s.pop();
-    }
-    cout << endl;
+    int n;
+    cin>>n;
+    cout << "Input: " << n << endl;
+    cout << "Output: " << factorial(n) << endl;
     return 0;
 }
